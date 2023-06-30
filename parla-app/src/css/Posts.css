@@ -1,0 +1,63 @@
+#post {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--timberwolf);
+  padding-bottom: 1vh;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  padding: 8px;
+  gap: 20px;
+}
+#userPhoto {
+  aspect-ratio: 1/1;
+  width: 5rem;
+  border-radius: 8%;
+  /* padding: 0px 0px 20px 0px; */
+  margin-left: 8px;
+  margin-top: 8px;
+  border: solid 2px var(--lightBrown);
+}
+#userName {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+#postImage {
+  width: 90%;
+  display: flex;
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: 8px;
+}
+.userInt {
+  display: flex;
+  justify-content: right;
+  align-content: flex-end;
+  height: 100%;
+  padding-bottom: 8px;
+}
+.userInt div {
+  align-items: center;
+}
+
+#postComments,
+#postFavorite,
+#postFavs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+#postComments:hover,
+#postFavorite:hover,
+#postFavs:hover {
+  cursor: pointer;
+}
+@media screen and (max-width: 900px) {
+  .userInt {
+    padding-right: 1rem;
+  }
+}

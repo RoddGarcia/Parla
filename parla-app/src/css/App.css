@@ -1,0 +1,74 @@
+:root {
+  --timberwolf: #dad7cd;
+  --sage: #a3b18a;
+  --fernGreen: #588157;
+  --hunterGreen: #3a5a40;
+  --brunswickGreen: #344e41;
+  --lightBrown: #695d53;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  /* overflow-x: hidden; */
+}
+
+nav {
+  background-color: var(--timberwolf);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+}
+nav img:hover {
+  cursor: pointer;
+  user-select: none;
+}
+nav img {
+  width: 16rem;
+  padding: 16px;
+}
+body {
+  background-color: #dad7cd;
+}
+.App {
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: left;
+  background-image: url("../../public/bgSite.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 800px;
+  background-color: #dad7cd;
+}
+
+content {
+  width: 50rem;
+  padding: 20px 0 80px 0;
+  background-color: var(--timberwolf);
+}
+
+h4 {
+  font-weight: 200;
+}
+
+#userInput {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+@media screen and (max-width: 900px) {
+  nav img {
+    /* height: 20vh;
+    width: auto; */
+    margin-bottom: 20px;
+  }
+
+  content {
+    width: 100%;
+  }
+}

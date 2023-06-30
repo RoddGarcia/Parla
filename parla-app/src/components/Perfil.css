@@ -1,0 +1,51 @@
+#formPut img {
+  aspect-ratio: 1/1;
+  border-radius: 20vw;
+  width: 40%;
+}
+#formPut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+#formPut input[type="submit"],
+#genderBtns input[type="button"] {
+  height: 4vh;
+  width: 5vw;
+}
+#genderBtns {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+#formPut input[type="text"] {
+  width: 100%;
+  height: 3vh;
+}
+.popup-inner {
+  max-width: 370px;
+}
+@media screen and (max-width: 900px) {
+  #fotoLabel {
+    display: none;
+  }
+  #formPut img {
+    width: 30%;
+  }
+  #formPut {
+    gap: 10px;
+  }
+  #formPut input[type="submit"],
+  #genderBtns input[type="button"] {
+    height: 4vh;
+    width: 18vw;
+  }
+  #genderBtns {
+    gap: 20px;
+  }
+  #formPut input[type="text"] {
+    width: 90%;
+    height: 3vh;
+  }
+}
