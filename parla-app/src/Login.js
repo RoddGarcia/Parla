@@ -12,13 +12,18 @@ const Login = ({ onLoginSuccess }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://192.168.15.21:8080/", {
-        nome: username,
-        senha: password,
-      });
+      const response = await axios.post(
+        "https://parlaapi.roddgarcia.repl.co/",
+        {
+          nome: username,
+          senha: password,
+        }
+      );
 
       if (response.data) {
-        fetch("http://192.168.15.21:8080/encontrarUser?nome=" + username)
+        fetch(
+          "https://parlaapi.roddgarcia.repl.co/encontrarUser?nome=" + username
+        )
           .then((response) => response.json())
           .then((data) => {
             onLoginSuccess(data[0]);
@@ -38,11 +43,14 @@ const Login = ({ onLoginSuccess }) => {
   const registrar = async (e) => {
     e.preventDefault();
     try {
-      let response = await axios.post("http://192.168.15.21:8080/usuarios", {
-        nome: username,
-        senha: password,
-        email: email,
-      });
+      let response = await axios.post(
+        "https://parlaapi.roddgarcia.repl.co/usuarios",
+        {
+          nome: username,
+          senha: password,
+          email: email,
+        }
+      );
 
       if (response.status === 201) {
         alert("Usuário criado com sucesso.");

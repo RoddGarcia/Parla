@@ -37,7 +37,11 @@ const Perfil = (props) => {
     };
 
     axios
-      .put("http://192.168.15.21:8080/usuarios/" + props.user.cod_usuario, body)
+      .put(
+        "https://parlaapi.roddgarcia.repl.co/usuarios/" +
+          props.user.cod_usuario,
+        body
+      )
       .then(() => {
         alert("Usuário alterado!");
         window.location.reload(true);

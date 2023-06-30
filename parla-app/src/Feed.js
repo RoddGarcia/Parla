@@ -9,7 +9,7 @@ import "./css/postBarPC.css";
 import axios from "axios";
 
 const Feed = ({ onLogout, user }) => {
-  const BaseURL = "http://192.168.15.21:8080/posts";
+  const BaseURL = "https://parlaapi.roddgarcia.repl.co/posts";
 
   const [feed, setFeed] = useState([]);
   const [perfil, setPerfil] = useState();
@@ -35,7 +35,7 @@ const Feed = ({ onLogout, user }) => {
       alert("Área de texto está vazia.");
     } else {
       axios
-        .post("http://192.168.15.21:8080/posts", {
+        .post("https://parlaapi.roddgarcia.repl.co/posts", {
           texto: text,
           usuario: { cod_usuario: user.cod_usuario },
         })

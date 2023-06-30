@@ -7,7 +7,7 @@ import "./css/Posts.css";
 // import { MdStar } from "react-icons/md";
 
 const SinglePost = (props) => {
-  const { del } = useFetch("http://192.168.15.21:8080/posts");
+  const { del } = useFetch("https://parlaapi.roddgarcia.repl.co/posts");
   const {
     usuario,
     texto,
