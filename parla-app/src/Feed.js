@@ -17,17 +17,17 @@ const Feed = ({ onLogout, user }) => {
   const [tamanho, setTamanho] = useState(0);
   const [text, setText] = useState("");
 
-  useEffect(() => {
-    getDados();
+  // useEffect(() => {
+  //   getDados();
 
-    const interval = setInterval(() => {
-      getDados();
-    }, 2000);
+  //   const interval = setInterval(() => {
+  //     getDados();
+  //   }, 2000);
 
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
+  //   return () => {
+  //     clearInterval(interval);
+  //   };
+  // }, []);
 
   const enviarPost = async (e) => {
     console.log(user.cod_usuario);
@@ -98,9 +98,12 @@ const Feed = ({ onLogout, user }) => {
           </div>
         </div>
         <content>
-          {feed.slice().map((feed) => {
-            return <Posts getDados={getDados} user={user} data={feed} />;
-          })}
+          {feed
+            .slice()
+            .reverse()
+            .map((feed) => {
+              return <Posts getDados={getDados} user={user} data={feed} />;
+            })}
         </content>
         <div className="navBar">
           <ul>
