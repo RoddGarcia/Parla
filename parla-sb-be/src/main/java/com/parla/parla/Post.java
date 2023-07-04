@@ -1,9 +1,8 @@
 package com.parla.parla;
 
 import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
 import java.util.TimeZone;
-
+import java.text.SimpleDateFormat;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -71,6 +70,7 @@ public class Post {
 
 	public String getDataCriada() {
 		SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
+		formatData.setTimeZone(TimeZone.getTimeZone("GMT-03:00"));
 		return formatData.format(dia_criado);
 	}
 
