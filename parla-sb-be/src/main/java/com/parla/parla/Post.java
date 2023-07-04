@@ -78,7 +78,7 @@ public class Post {
 		return usuario;
 	}
 
-	public void setUsuatio(Usuario usuario) {
+	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
 
