@@ -25,7 +25,6 @@ public class Post {
 	private int likes;
 	
 	@CreationTimestamp
-	@OrderBy("dia_criado DESC")
 	private Timestamp dia_criado;
 	
 	@ManyToOne(optional = false)
