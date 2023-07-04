@@ -98,12 +98,9 @@ const Feed = ({ onLogout, user }) => {
           </div>
         </div>
         <content>
-          {feed
-            .slice()
-            .reverse()
-            .map((feed) => {
-              return <Posts getDados={getDados} user={user} data={feed} />;
-            })}
+          {feed.slice().map((feed) => {
+            return <Posts getDados={getDados} user={user} data={feed} />;
+          })}
         </content>
         <div className="navBar">
           <ul>
