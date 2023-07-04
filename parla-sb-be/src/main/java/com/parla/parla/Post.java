@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Column;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -17,6 +18,7 @@ import org.hibernate.annotations.CreationTimestamp;
 public class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "cod_post")
 	private int id;
 	private String texto;
 	// private int cod_usuario;
@@ -35,6 +37,7 @@ public class Post {
 	public Post(int id, String texto, int likes) {
 		this.id = id;
 		this.texto = texto;
+		// this.cod_usuario = cod_usuario;
 		this.likes = likes;
 	}
 
