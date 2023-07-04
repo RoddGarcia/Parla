@@ -13,13 +13,13 @@ const SinglePost = (props) => {
     texto,
     // likes,
     dia_criado,
-    cod_post,
+    id,
     dataCriada,
     // usuario: { nome, email },
   } = props.data;
 
   const apagar = async (e) => {
-    await del("/" + e.cod_post).then(() => alert("Item eliminado"));
+    await del("/" + e.id).then(() => alert("Item eliminado"));
     props.getDados();
     // .then(() => window.location.reload(false));
   };
@@ -61,7 +61,7 @@ const SinglePost = (props) => {
             {props.data.usuario.cod_usuario === props.user.cod_usuario ? (
               <BsTrash
                 onClick={() => {
-                  apagar({ cod_post });
+                  apagar({ id });
                 }}
               />
             ) : (

@@ -17,7 +17,7 @@ import org.hibernate.annotations.CreationTimestamp;
 public class Post {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int cod_post;
+	private int id;
 	private String texto;
 	// private int cod_usuario;
 	private int likes;
@@ -32,19 +32,18 @@ public class Post {
 	public Post() {
 	};
 
-	public Post(int cod_post, String texto, int likes) {
-		this.cod_post = cod_post;
+	public Post(int id, String texto, int likes) {
+		this.id = id;
 		this.texto = texto;
-		// this.cod_usuario = cod_usuario;
 		this.likes = likes;
 	}
 
-	public int getCod_post() {
-		return cod_post;
+	public int getid() {
+		return id;
 	}
 
-	public void setCod_post(int cod_post) {
-		this.cod_post = cod_post;
+	public void setid(int id) {
+		this.id = id;
 	}
 
 	public String getTexto() {
@@ -73,12 +72,6 @@ public class Post {
 		return formatData.format(dia_criado);
 	}
 
-	// public int getCod_usuario() {
-	// return cod_usuario;
-	// }
-	// public void setCod_usuario(int cod_usuario) {
-	// this.cod_usuario = cod_usuario;
-	// }
 	public Usuario getUsuario() {
 		return usuario;
 	}
@@ -97,7 +90,7 @@ public class Post {
 
 	@Override
 	public String toString() {
-		return "ParlaPost [cod_post=" + cod_post + ", texto=" + texto + ", likes="
+		return "ParlaPost [id=" + id + ", texto=" + texto + ", likes="
 				+ likes
 				+ "]";
 	}

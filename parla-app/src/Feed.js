@@ -98,12 +98,9 @@ const Feed = ({ onLogout, user }) => {
           </div>
         </div>
         <content>
-          {feed
-            .slice()
-            // .reverse()
-            .map((feed) => {
-              return <Posts getDados={getDados} user={user} data={feed} />;
-            })}
+          {feed.map((feed) => {
+            return <Posts getDados={getDados} user={user} data={feed} />;
+          })}
         </content>
         <div className="navBar">
           <ul>
@@ -111,16 +108,6 @@ const Feed = ({ onLogout, user }) => {
               <IoMdHome size={"40px"} color={"#dad7cd"} />
               <li>Home</li>
             </div>
-            {/* <div
-              id="btnPost"
-              onClick={() => {
-                setPopup(true);
-                // document.getElementById("App").style.overflow = "hid";
-              }}
-            >
-              <BsPencilSquare size={"40px"} color={"#dad7cd"} />
-              <li>Parlar</li>
-            </div> */}
             <div
               id="btnPerfil"
               onClick={() => {
