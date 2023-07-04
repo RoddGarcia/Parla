@@ -27,7 +27,7 @@ public class PostController {
 	// Resgatar Posts
 	@GetMapping("/posts")
 	public List<Post> getPost() {
-		Sort sort = Sort.by(Sort.Direction.ASC, "dia_criado");
+		Sort sort = Sort.by(Sort.Direction.DESC, "dia_criado");
 		return repository.findAll(sort);
 	}
 	
