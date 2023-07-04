@@ -1,6 +1,5 @@
 package com.parla.parla;
 
-
 import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import javax.persistence.Entity;
@@ -9,7 +8,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -23,15 +21,14 @@ public class Post {
 	private String texto;
 	// private int cod_usuario;
 	private int likes;
-	
+
 	@CreationTimestamp
 	private Timestamp dia_criado;
-	
+
 	@ManyToOne(optional = false)
 	@JoinColumn(name = "cod_usuario")
 	private Usuario usuario;
 
-	
 	public Post() {
 	};
 
@@ -58,20 +55,20 @@ public class Post {
 		this.texto = texto;
 	}
 
-//	public Timestamp getDia_criado() {
-//	        return dia_criado;
-//	    }
+	// public Timestamp getDia_criado() {
+	// return dia_criado;
+	// }
 
 	public void setDia_criado(Timestamp dia_criado) {
-	        this.dia_criado = dia_criado;
-	    }
+		this.dia_criado = dia_criado;
+	}
 
 	public String getDia_criado() {
-	        SimpleDateFormat formatador = new SimpleDateFormat("HH:mm");
-	        return formatador.format(dia_criado);
-	    }
-	
-	public String getDataCriada () {
+		SimpleDateFormat formatador = new SimpleDateFormat("HH:mm");
+		return formatador.format(dia_criado);
+	}
+
+	public String getDataCriada() {
 		SimpleDateFormat formatData = new SimpleDateFormat("dd/MM/yyyy");
 		return formatData.format(dia_criado);
 	}

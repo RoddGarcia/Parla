@@ -26,7 +26,8 @@ public class PostController {
 	// Resgatar Posts
 	@GetMapping("/posts")
 	public List<Post> getPost() {
-		return repository.findAllOrderByCodPostDesc();
+		// return repository.findAll();
+		return repository.findAll(Sort.by(Sort.Direction.DESC, "cod_post"));
 	}
 
 	// Criar Post -- (texto, cod_usuario)

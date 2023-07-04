@@ -35,7 +35,7 @@ const Feed = ({ onLogout, user }) => {
       alert("Área de texto está vazia.");
     } else {
       axios
-        .post("https://parlaapi.roddgarcia.repl.co/posts", {
+        .post("https://parlaapi.roddgarcia.repl.co/posts?sort=codPost,desc", {
           texto: text,
           usuario: { cod_usuario: user.cod_usuario },
         })
@@ -100,7 +100,7 @@ const Feed = ({ onLogout, user }) => {
         <content>
           {feed
             .slice()
-            .reverse()
+            // .reverse()
             .map((feed) => {
               return <Posts getDados={getDados} user={user} data={feed} />;
             })}
