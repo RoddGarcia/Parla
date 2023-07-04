@@ -6,6 +6,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,7 +27,8 @@ public class PostController {
 	// Resgatar Posts
 	@GetMapping("/posts")
 	public List<Post> getPost() {
-		return repository.findAll();
+		Sort sort = Sort.by(Sort.Direction.DESC, "dia_criado");
+		return repository.findAll(sort);
 	}
 	
 	// Criar Post					-- (texto, cod_usuario)
