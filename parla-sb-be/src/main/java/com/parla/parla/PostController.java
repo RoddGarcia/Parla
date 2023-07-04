@@ -2,7 +2,6 @@ package com.parla.parla;
 
 import java.util.List;
 
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,23 +22,22 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostController {
 	@Autowired
 	private PostRepository repository;
-	
+
 	// Resgatar Posts
 	@GetMapping("/posts")
 	public List<Post> getPost() {
 		return repository.findAllOrderByCodPostDesc();
 	}
-	
-	// Criar Post					-- (texto, cod_usuario)
+
+	// Criar Post -- (texto, cod_usuario)
 	@PostMapping("/posts")
-	public @ResponseBody Post createPost (@Valid @RequestBody Post parlaPost) {
+	public @ResponseBody Post createPost(@Valid @RequestBody Post parlaPost) {
 		return repository.save(parlaPost);
 	}
-	
+
 	@DeleteMapping("/posts/{id}")
 	public void excluirPost(@PathVariable int id) {
 		repository.deleteById(id);
 	}
-	
-	
+
 }
