@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OrderBy;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
@@ -24,6 +25,7 @@ public class Post {
 	private int likes;
 	
 	@CreationTimestamp
+	@OrderBy("dia_criado DESC")
 	private Timestamp dia_criado;
 	
 	@ManyToOne(optional = false)
