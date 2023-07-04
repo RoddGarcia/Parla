@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface PostRepository extends JpaRepository<Post, Integer>{
 
-    @Query("SELECT p FROM Post p ORDER BY p.cod_post DESC")
+    @Query("SELECT * FROM Post p ORDER BY p.cod_post DESC")
     List<Post> findAllOrderByCodPostDesc();
 	
 }
