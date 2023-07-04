@@ -17,17 +17,17 @@ const Feed = ({ onLogout, user }) => {
   const [tamanho, setTamanho] = useState(0);
   const [text, setText] = useState("");
 
-  // useEffect(() => {
-  //   getDados();
+  useEffect(() => {
+    getDados();
 
-  //   const interval = setInterval(() => {
-  //     getDados();
-  //   }, 2000);
+    const interval = setInterval(() => {
+      getDados();
+    }, 2000);
 
-  //   return () => {
-  //     clearInterval(interval);
-  //   };
-  // }, []);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const enviarPost = async (e) => {
     console.log(user.cod_usuario);
